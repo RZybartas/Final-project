@@ -1,2 +1,3 @@
 server/.eslintrc.json
 server/node_modules
+server/.env
