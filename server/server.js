@@ -5,6 +5,7 @@ const mysql = require('mysql2/promise');
 const { port, dbConfig } = require('./config');
 const auth = require('./src/routes/v1/auth');
 const events = require('./src/routes/v1/events');
+const registration = require('./src/routes/v1/registration');
 
 const main = async () => {
     const app = express();
@@ -19,7 +20,7 @@ const main = async () => {
 
         app.use('/v1/auth', auth);
         app.use('/v1/events', events);
-        
+        app.use('/v1/registration', registration);
 
         app.get('*', (req, res) => {
             res.status(404).send({error: 'Page not found'})

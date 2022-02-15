@@ -1,0 +1,11 @@
+CREATE TABLE IF NOT EXISTS participants (
+    id INTEGER AUTO_INCREMENT NOT NULL,
+    event_id INTEGER NOT NULL,
+    firstname VARCHAR(100) NOT NULL,
+    surname VARCHAR(100) NOT NULL,
+    email VARCHAR(200) NOT NULL,
+    dob DATE NOT NULL,
+    PRIMARY KEY (id),
+    FOREIGN KEY (event_id) REFERENCES events (id)
+    ON DELETE CASCADE
+)
