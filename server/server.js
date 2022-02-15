@@ -4,7 +4,7 @@ const mysql = require('mysql2/promise');
 
 const { port, dbConfig } = require('./config');
 const auth = require('./src/routes/v1/auth');
-
+const events = require('./src/routes/v1/events');
 
 const main = async () => {
     const app = express();
@@ -18,18 +18,16 @@ const main = async () => {
         app.mysql = connection;
 
         app.use('/v1/auth', auth);
-
-        app.get('/', (req, res) => {
-            res.send('ok')
-        })
+        app.use('/v1/events', events);
+        
 
         app.get('*', (req, res) => {
             res.status(404).send({error: 'Page not found'})
-        })
+        });
 
         app.listen(port, () => {
             console.log(`Server running on port: ${port}`);
-        })
+        });
     } catch (error) {
         console.error(error, 'Something wrong with database');
     }

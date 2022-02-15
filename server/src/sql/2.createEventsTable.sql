@@ -1,0 +1,6 @@
+CREATE TABLE IF NOT EXISTS events (
+    id INTEGER AUTO_INCREMENT NOT NULL,
+    title VARCHAR(200) NOT NULL,
+    event_date DATE NOT NULL,
+    PRIMARY KEY (id)
+)
