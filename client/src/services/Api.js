@@ -17,5 +17,17 @@ export class Api {
             body: JSON.stringify({email, password}),
         });
         return res.json();
-    }
+    };
+
+    static async getEvents(token) {
+        const res = await fetch(`${API}/events`, {
+            method: 'GET',
+            headers: {
+                "Content-Type": "application/json",
+                'Authorization': `Bearer ${token}`
+            },
+        });
+
+        return res.json();
+    };
 }

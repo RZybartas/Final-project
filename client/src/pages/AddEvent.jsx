@@ -1,9 +1,9 @@
-import React from 'react'
 
-const AddEvent = () => {
+
+export const AddEvent = () => {
   return (
-    <div>AddEvent</div>
+    <h1 className="page-title">AddEvent</h1>
+    
   )
 }
 
-export default AddEvent

@@ -1,0 +1,54 @@
+.page-title {
+    color: $white;
+    text-align: center;
+    margin: 40px 0;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    justify-content: center;
+
+}
+
+.event__card {
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    margin: 30px;
+    background-color: $white;
+    overflow: hidden;
+}
+
+.event__img {
+    width: 150px;
+}
+.event__title {
+    font-size: 20px;
+    margin: 20px 5px;
+    color: $primary;
+}
+.event__city {
+    display: flex;
+    font-size: 20px;
+    justify-content: center;
+}
+
+.event__date {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    margin: 20px 5px;
+}
+
+.event__btn {
+    background: $white;
+    font-weight: bold;
+    color: $primary;
+    border: 2px solid $primary;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px;
+}
