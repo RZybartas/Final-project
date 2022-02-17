@@ -28,7 +28,7 @@ export const Login = () => {
             return;
         }
         setError('null')
-        navigate("/events");
+        navigate("/");
     }; 
 
     return (

@@ -13,12 +13,14 @@ const participantsSchema = joi.object({
     dob: joi.string().required()
 });
 
-router.get('/', isLogged, async (req, res) => {
+router.get('/:id', isLogged, async (req, res) => {
     const { mysql } = req.app;
+    const id = Number(req.params.id);
 
     try {
         const query = `
             SELECT * FROM participants
+            WHERE id = ${mysql.escape(id)}
         `;
         
         const [participants] = await mysql.query(query);

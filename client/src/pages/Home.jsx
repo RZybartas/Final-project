@@ -4,6 +4,7 @@ import { useAuth } from "../hooks/useAuth";
 import { FcCalendar } from 'react-icons/fc';
 import { FaMapMarkerAlt } from 'react-icons/fa';
 import { useNavigate } from "react-router-dom";
+import moment from 'moment';
 
 
 
@@ -12,9 +13,6 @@ export const Home = () => {
     const { token } = useAuth();
     const navigate = useNavigate();
 
-
-    
-    
     useEffect(() => {
         const fecthEvents = async () => {
             const res = await Api.getEvents(token);
@@ -39,7 +37,7 @@ export const Home = () => {
                                 <h2 className="event__title">{ev.title}</h2>
                                 <h3 className="event__city"> <FaMapMarkerAlt />{ev.city} {ev.place} </h3>
                                 
-                                <p className="event__date"><FcCalendar /> {ev.event_date} </p>
+                                <p className="event__date"><FcCalendar /> {moment(ev.event_date).format('YYYY-MM-DD')} </p>
                                 <button 
                                     className="event__btn"
                                     onClick={() => navigate(`/reservation/${ev.id}`)}

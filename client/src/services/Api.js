@@ -30,4 +30,40 @@ export class Api {
 
         return res.json();
     };
+
+    static async addEvent(token, events) {
+        const res = await fetch(`${API}/events/add`, {
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json",
+                'Authorization': `Bearer ${token}`
+            },
+            body: JSON.stringify(events)
+        });
+        return res.json();
+    };
+
+    static async addReserve(reserve, token) {
+        const res = await fetch(`${API}/registration/add`, {
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json",
+                'Authorization': `Bearer ${token}`
+            },
+            body: JSON.stringify(reserve)
+        });
+        console.log(reserve)
+        return res.json();
+    }
+
+    static async getByEventId(token, id) {
+        const res = await fetch(`${API}/registration/${id}`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token} `
+            },
+        });
+        return res.json();
+    }
 }

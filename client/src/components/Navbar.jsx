@@ -6,7 +6,7 @@ export const Navbar = () => {
     
     const links = auth.token ? (
         <div>
-            <Link to='/home' className="link">Home</Link>
+            <Link to='/' className="link">Home</Link>
             <Link to='/add' className="link">Add Event</Link>
             <span className="link" onClick={() => auth.logout()}>Logout</span>
         </div>

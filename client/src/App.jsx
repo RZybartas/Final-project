@@ -25,7 +25,7 @@ function App() {
                         element={ <Login />} 
                     />
                     <Route 
-                        path='/home' 
+                        path='/' 
                         element={<RequireAuth><Home /></RequireAuth>} 
                     />
                     <Route 
