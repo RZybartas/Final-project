@@ -31,7 +31,7 @@ export class Api {
         return res.json();
     };
 
-    static async addEvent(token, events) {
+    static async addEvent(events, token) {
         const res = await fetch(`${API}/events/add`, {
             method: 'POST',
             headers: {
@@ -40,6 +40,7 @@ export class Api {
             },
             body: JSON.stringify(events)
         });
+        console.log(events)
         return res.json();
     };
 
@@ -65,7 +66,7 @@ export class Api {
             },
             body: JSON.stringify(reserve)
         });
-        console.log(token)
+        
         
         return res.json();
     };

@@ -7,14 +7,16 @@ const auth = require('./src/routes/v1/auth');
 const events = require('./src/routes/v1/events');
 const registration = require('./src/routes/v1/registration');
 
+const app = express();
+
+app.use(express.json());
+app.use(cors());
+
 const main = async () => {
-    const app = express();
 
     try {
         const connection = await mysql.createConnection(dbConfig);
 
-        app.use(express.json());
-        app.use(cors());
 
         app.mysql = connection;
 
