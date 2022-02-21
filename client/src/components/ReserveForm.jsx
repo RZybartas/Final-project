@@ -16,6 +16,7 @@ export const ReserveForm = () => {
 
             if(reserve.err) throw new Error(reserve.err)
             alert('Reservation added succesfully');
+            window.location.reload(false);
         } catch (error) {
             console.log(error)
         }

@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { AuthProvider} from './components/AuthProvider';
 import { Header } from './components/Header';
+import { ModalUpdate } from './components/ModalUpdate';
 import { RequireAuth } from './components/RequireAuth';
 import { AddEvent } from './pages/AddEvent';
 import { Home } from './pages/Home';
@@ -35,6 +36,10 @@ function App() {
                     <Route 
                         path='/reservation/:id' 
                         element={<RequireAuth><Reservation /></RequireAuth>} 
+                    />
+                    <Route 
+                        path='/update/:id' 
+                        element={<RequireAuth><ModalUpdate /></RequireAuth>} 
                     />
                 </Routes>
             </Router>

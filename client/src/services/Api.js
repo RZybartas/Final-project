@@ -52,16 +52,44 @@ export class Api {
             },
             body: JSON.stringify(reserve)
         });
-        console.log(reserve)
+        
+        return res.json();
+    };
+
+    static async update(reserve, id, token) {
+        const res = await fetch(`${API}/registration/${id}`, {
+            method: 'PATCH',
+            headers: {
+                "Content-Type": "application/json",
+                'Authorization': `Bearer ${token}`
+            },
+            body: JSON.stringify(reserve)
+        });
+        console.log(token)
+        
+        return res.json();
+    };
+
+    static async delete(id, token) {
+        if (!id) throw new Error("No argument");
+
+        const res = await fetch(`${API}/registration/${id}`, {
+            method: "DELETE",
+            headers: {
+                'Authorization': `Bearer ${token}`
+            },
+        });
+        
+
         return res.json();
     }
 
-    static async getByEventId(token, id) {
+    static async getAllByEventId(token, id) {
         const res = await fetch(`${API}/registration/${id}`, {
             method: 'GET',
             headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${token} `
+                "Content-Type": "application/json",
+                'Authorization': `Bearer ${token}`
             },
         });
         return res.json();

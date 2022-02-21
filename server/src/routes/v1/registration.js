@@ -20,7 +20,7 @@ router.get('/:id', isLogged, async (req, res) => {
     try {
         const query = `
             SELECT * FROM participants
-            WHERE id = ${mysql.escape(id)}
+            WHERE event_id = ${mysql.escape(id)}
         `;
         
         const [participants] = await mysql.query(query);
@@ -104,8 +104,8 @@ router.patch('/:id', isLogged, async (req, res) => {
 
 router.delete('/:id', isLogged, async (req, res) => {
     const { mysql } = req.app;
-    const id = Number(req.params.id);
-
+    const id = (req.params.id);
+    console.log(id)
     try {
         const [{ affectedRows }] = await mysql.query(
             `DELETE FROM participants WHERE id=${mysql.escape(id)};`
