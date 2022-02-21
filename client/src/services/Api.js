@@ -40,7 +40,6 @@ export class Api {
             },
             body: JSON.stringify(events)
         });
-        console.log(events)
         return res.json();
     };
 

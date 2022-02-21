@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useAuth } from "../hooks/useAuth";
 import { Api } from "../services/Api";
+import moment from 'moment';
 import {
     Table, 
     TableBody,
@@ -20,7 +21,7 @@ import EditIcon from "@material-ui/icons/EditOutlined";
 
 
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
     table: {
         minWidth: 650,
     },
@@ -109,7 +110,7 @@ export const ParticipantsList = () => {
                                 <TableCell>{row.firstname}</TableCell>
                                 <TableCell>{row.surname}</TableCell>
                                 <TableCell>{row.email}</TableCell>
-                                <TableCell>{row.dob}</TableCell>
+                                <TableCell>{moment(row.dob).format('YYYY-MM-DD')}</TableCell>
                                 <TableCell >
                                     <IconButton
                                         aria-label="edit"

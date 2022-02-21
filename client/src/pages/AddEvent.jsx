@@ -30,6 +30,7 @@ export const AddEvent = () => {
                 placeholder='Img Url'
                 name='img_url'
                 className='reservation__input'
+                required
             />
 
             <input 
@@ -37,6 +38,7 @@ export const AddEvent = () => {
                 placeholder='Title'
                 name='title'
                 className='reservation__input'
+                required
             />
 
             <input 
@@ -44,6 +46,7 @@ export const AddEvent = () => {
                 placeholder='City'
                 name='city'
                 className='reservation__input'
+                required
             />
 
             <input 
@@ -51,12 +54,14 @@ export const AddEvent = () => {
                 name='place'
                 placeholder="Place"
                 className='reservation__input'
+                required
             />
 
             <input 
-                type='date'
+                type='datetime-local'
                 name='event_date'
                 className='reservation__input'
+                required
             />
 
             <button

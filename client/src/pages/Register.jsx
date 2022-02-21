@@ -44,6 +44,7 @@ export const Register = () => {
                     name='email'
                     className='auth__input'
                     onChange={onEmailChange}
+                    required
                 />
 
                 <input 
@@ -52,6 +53,7 @@ export const Register = () => {
                     name='password'
                     className='auth__input'
                     onChange={onPasswordChange}
+                    required
                 />
 
                 <button

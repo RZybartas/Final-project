@@ -4,6 +4,6 @@ CREATE TABLE IF NOT EXISTS events (
     title VARCHAR(200) NOT NULL,
     city VARCHAR(50) NOT NULL,
     place VARCHAR(100) NOT NULL,
-    event_date DATE NOT NULL,
+    event_date DATETIME NOT NULL, 
     PRIMARY KEY (id)
 )

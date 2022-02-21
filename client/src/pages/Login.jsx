@@ -42,6 +42,7 @@ export const Login = () => {
                     name='email'
                     className='auth__input'
                     onChange={onEmailChange}
+                    required
                 />
 
                 <input 
@@ -50,6 +51,7 @@ export const Login = () => {
                     name='password'
                     className='auth__input'
                     onChange={onPasswordChange}
+                    required
                 />
 
                 <button

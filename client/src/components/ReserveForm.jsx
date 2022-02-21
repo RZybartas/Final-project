@@ -29,6 +29,7 @@ export const ReserveForm = () => {
                 placeholder='FirstName'
                 name='firstname'
                 className='reservation__input'
+                required
             />
 
             <input 
@@ -36,6 +37,7 @@ export const ReserveForm = () => {
                 placeholder='Surname'
                 name='surname'
                 className='reservation__input'
+                required
             />
 
             <input 
@@ -43,12 +45,14 @@ export const ReserveForm = () => {
                 placeholder='Email'
                 name='email'
                 className='reservation__input'
+                required
             />
 
             <input 
                 type='date'
                 name='dob'
                 className='reservation__input'
+                required
             />
 
             <button

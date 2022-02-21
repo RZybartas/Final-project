@@ -37,7 +37,7 @@ export const Home = () => {
                                 <h2 className="event__title">{ev.title}</h2>
                                 <h3 className="event__city"> <FaMapMarkerAlt />{ev.city} {ev.place} </h3>
                                 
-                                <p className="event__date"><FcCalendar /> {moment(ev.event_date).format('YYYY-MM-DD')} </p>
+                                <p className="event__date"><FcCalendar /> {moment(ev.event_date).format('YYYY-MM-DD HH:MM')} </p>
                                 <button 
                                     className="event__btn"
                                     onClick={() => navigate(`/reservation/${ev.id}`)}
